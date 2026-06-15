@@ -19,16 +19,18 @@ I build full-stack products with LLM integrations — Telegram Mini Apps, mobile
 
 ### 📊 Highlights
 
+- **1 real-time AI voice agent** shipped — custom **STT → LLM → TTS** pipeline over WebSocket (no vendor SDK)
 - **5+ mobile apps** shipped to App Store / Google Play (most under client publisher accounts)
 - **~250 active users** across solo Telegram Mini Apps
-- **5+ projects** with integrated AI (Claude / GPT)
+- **5+ projects** with integrated AI (Claude / GPT / multi-model routing via OpenRouter)
 - **3 production projects** led as QA (mobile + web, end-to-end)
 - **Many** Telegram bots & **n8n** automations shipped
 - **4+ years** building & shipping software (since 2022)
 
 ### 🛠️ Stack
 
-- **AI** — Claude (Anthropic SDK), GPT (OpenAI SDK), prompt engineering, agent design, Claude Code skills
+- **AI** — Claude (Anthropic SDK), GPT (OpenAI SDK), OpenRouter (multi-model routing), prompt engineering, agent design, Claude Code skills
+- **Voice AI** — real-time STT (**Deepgram nova-3**), streaming TTS (**Fish.audio s2-pro**), WebSocket pipelines, TTFT-budget engineering, barge-in
 - **Automation** — **n8n** (workflows, LLM nodes, custom integrations), Telegram Bot API
 - **Languages** — Python, TypeScript, JavaScript
 - **Backend** — Node.js, FastAPI, Express
@@ -38,26 +40,31 @@ I build full-stack products with LLM integrations — Telegram Mini Apps, mobile
 - **Data** — PostgreSQL, SQLite
 - **Quality** — test design, regression suites, end-to-end testing, bug triage
 
-### 🚀 Featured build projects
+### 🚀 Featured projects
+
+#### 🎙️ AI Voice Sales Agent · "Катя" — *case study · lead dev · MVP/beta*
+Real-time in-browser AI voice agent: visitor lands in a chat, AI extracts business data, then plays a live demo call. Custom **STT → LLM → TTS** WebSocket pipeline — **Deepgram nova-3** + **OpenRouter (3-model routing)** + **Fish.audio s2-pro**. Latency-engineered (~547 ms saved per turn via parallelization).
+→ [Case study](https://github.com/santicc712/case-ai-voice-sales-agent)
 
 #### 🍃 The Snake — *case study · solo · iOS + Android · production*
 Mobile grocery delivery app with AI recipe assistant. **Released on App Store + Google Play**, end-to-end solo development for both platforms.
-→ [App Store](https://apps.apple.com/ru/app/%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D1%8B%D0%B9-%D0%B7%D0%BC%D0%B5%D0%B9/id6759165882)
+→ [App Store](https://apps.apple.com/ru/app/%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D1%8B%D0%B9-%D0%B7%D0%BC%D0%B5%D0%B9/id6759165882) · [Case study](https://github.com/santicc712/case-snake)
+
+#### 📦 Delivery CRM — *case study · AI modules · GPT-4o*
+CRM unifying CDEK + Russian Post orders, with **GPT-4o free-text order parser**. Production system on Nuxt 3 + Prisma + PostgreSQL.
+→ [Case study](https://github.com/santicc712/case-delivery)
+
+#### 🤝 Connect — *case study · team · AI marketplace*
+Two-sided freelance marketplace with built-in AI — Smart Briefing via **n8n + LLM**, AI clarity/scoring on the input gate. FastAPI + React TMA. I contributed development and led QA.
+→ [Case study](https://github.com/santicc712/case-connect)
 
 #### 💌 UVL (uvalentine) — *solo · ~150 active users*
 Telegram Mini App for anonymous Valentine's exchange. My first solo product — end-to-end build, deploy, user growth.
+→ [Case study](https://github.com/santicc712/case-uvl)
 
 #### 🚗 UGR (ugarage) — *solo · ~100 active users*
 Telegram Mini App for car owners: tracking repairs, expenses, history. Second solo product, full-stack.
-
-#### 📦 Delivery CRM — *case study · AI modules*
-CRM unifying CDEK + Russian Post orders, with AI modules for order creation. Production system.
-
-#### 🗺️ Passport Vyborg — *case study · solo · production*
-Mobile-web travel guide for the city of Vyborg: quests, interactive map, missions. Solo development, deployed.
-
-#### 🤝 Connect — *case study · team · AI marketplace*
-Freelance marketplace with built-in AI. Team project — contributed development and QA.
+→ [Case study](https://github.com/santicc712/case-ugr)
 
 > Plus dozens of smaller Telegram bots and **n8n** automation workflows for personal use and clients — process automation, chat ops, content pipelines.
 
@@ -91,16 +98,18 @@ End-to-end testing on production products — test design, regression coverage, 
 
 ### Цифры
 
+- **1 real-time AI voice-agent** — кастомный пайплайн **STT → LLM → TTS** через WebSocket (без vendor SDK)
 - **5+ мобильных приложений** опубликовано в App Store / Google Play (большинство под аккаунтами заказчиков)
 - **~250 активных юзеров** на соло Telegram Mini Apps
-- **5+ проектов** с интегрированным AI (Claude / GPT)
+- **5+ проектов** с интегрированным AI (Claude / GPT / multi-model routing через OpenRouter)
 - **3 продакшн-проекта** провёл как QA от начала до конца
 - **Много** Telegram-ботов и **n8n** автоматизаций
 - **4+ года** в разработке (с 2022)
 
 ### Стек
 
-- **AI** — Claude (Anthropic SDK), GPT (OpenAI SDK), промпт-инжиниринг, агенты, Claude Code skills
+- **AI** — Claude (Anthropic SDK), GPT (OpenAI SDK), OpenRouter (multi-model routing), промпт-инжиниринг, агенты, Claude Code skills
+- **Voice AI** — real-time STT (**Deepgram nova-3**), streaming TTS (**Fish.audio s2-pro**), WebSocket пайплайны, TTFT-budget инжиниринг, barge-in
 - **Автоматизация** — **n8n** (воркфлоу, LLM-ноды, кастомные интеграции), Telegram Bot API
 - **Языки** — Python, TypeScript, JavaScript
 - **Бэкенд** — Node.js, FastAPI, Express
@@ -112,12 +121,13 @@ End-to-end testing on production products — test design, regression coverage, 
 
 ### Проекты (разработка)
 
-- **🍃 The Snake** — мобильное приложение доставки продуктов с AI-помощником по рецептам. Релиз в App Store + Google Play, соло end-to-end на обе платформы.
-- **💌 UVL (uvalentine)** — TMA анонимных валентинок. Соло, ~150 активных юзеров.
-- **🚗 UGR (ugarage)** — TMA онлайн-гараж для отслеживания ремонта и расходов на авто. Соло, ~100 активных юзеров.
-- **📦 Delivery CRM** — CRM объединяет заказы СДЭК и Почты России, AI-модули. Продакшн.
-- **🗺️ Passport Vyborg** — мобильное веб-приложение онлайн-гид по Выборгу: квесты, карта, миссии. Соло.
-- **🤝 Connect** — фриланс-площадка со встроенным AI. Команда — разработка и QA.
+- **🎙️ AI Voice Sales Agent · «Катя»** — real-time AI-голосовой агент в браузере: чат-воронка, demo-звонок прямо в браузере. Кастомный STT → LLM → TTS пайплайн (Deepgram nova-3 + OpenRouter с 3 моделями + Fish.audio s2-pro). Lead dev, MVP/beta. [Case study](https://github.com/santicc712/case-ai-voice-sales-agent)
+- **🍃 The Snake** — мобильное приложение доставки продуктов с AI-помощником по рецептам. Релиз в App Store + Google Play, соло end-to-end. [Case study](https://github.com/santicc712/case-snake)
+- **📦 Delivery CRM** — CRM объединяет заказы СДЭК и Почты России + **GPT-4o парсер свободного текста**. Продакшн. [Case study](https://github.com/santicc712/case-delivery)
+- **🤝 Connect** — фриланс-площадка с **Smart Briefing через n8n + LLM** и AI clarity/scoring. Командный проект, разработка + QA. [Case study](https://github.com/santicc712/case-connect)
+- **💌 UVL (uvalentine)** — TMA анонимных валентинок. Соло, ~150 активных юзеров. [Case study](https://github.com/santicc712/case-uvl)
+- **🚗 UGR (ugarage)** — TMA онлайн-гараж для отслеживания ремонта и расходов на авто. Соло, ~100 активных юзеров. [Case study](https://github.com/santicc712/case-ugr)
+- **🗺️ Passport Vyborg** — мобильное веб-приложение онлайн-гид по Выборгу: квесты, карта, миссии. Соло. [Case study](https://github.com/santicc712/case-passport)
 
 Плюс много мелких Telegram-ботов и **n8n** автоматизаций для себя и заказчиков.
 
